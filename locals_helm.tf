@@ -116,11 +116,11 @@ locals {
         }
         storageClasses = [
           {
-            name                 = "gp3"
+            name                 = "gp2"
             volumeBindingMode    = "WaitForFirstConsumer"
             allowVolumeExpansion = true
             parameters = {
-              type               = "gp3"
+              type               = "gp2"
               tagSpecification_1 = "Name={{ .PVName }}"
             }
             mountOptions = [
@@ -133,10 +133,10 @@ locals {
         ]
         volumeSnapshotClasses = [
           {
-            name           = "gp3"
+            name           = "gp2"
             deletionPolicy = "Delete"
             parameters = {
-              type               = "gp3"
+              type               = "gp2"
               tagSpecification_1 = "Name={{ .PVName }}"
             }
             annotations = {
