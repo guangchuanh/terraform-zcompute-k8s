@@ -76,3 +76,32 @@ resource "aws_security_group_rule" "k8s_extra" {
 
   security_group_id = aws_security_group.k8s_extra[split(".", each.key)[0]].id
 }
+
+# my-home
+resource "aws_security_group" "my_home" {
+  name        = "${var.cluster_name}_myhome"
+  description = "NLB for my home ipaddress"
+  vpc_id      = data.aws_vpc.this.id
+
+  ingress {
+    description = "Allow HTTP"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["126.249.153.249/32"]
+  }
+
+  egress {
+    description = "Allow all outbound"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"  # all
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = local.tags
+}
+
+
+
+
