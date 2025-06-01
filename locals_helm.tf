@@ -188,7 +188,7 @@ locals {
         enableShield       = false
         enableWaf          = false
         enableWafv2        = false
-        awsApiEndpoints    = "ec2=https://compute-il-interoplab-01.zadara.com/api/v2/aws/ec2,elasticloadbalancing=https://compute-il-interoplab-01.zadara.com/api/v2/aws/elbv2,acm=https://compute-il-interoplab-01.zadara.com/api/v2/aws/acm,sts=https://compute-il-interoplab-01.zadara.com/api/v2/aws/sts"
+        awsApiEndpoints    = "ec2=https://cloud.zadara.com/api/v2/aws/ec2,elasticloadbalancing=https://cloud.zadara.com/api/v2/aws/elbv2,acm=https://cloud.zadara.com/api/v2/aws/acm,sts=https://cloud.zadara.com/api/v2/aws/sts"
         tolerations = [{ effect = "NoSchedule", key = "", operator = "Exists" }, { effect = "NoExecute", key = "", operator = "Exists" }]
       }
     }
