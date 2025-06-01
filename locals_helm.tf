@@ -4,8 +4,7 @@ locals {
       order           = 10
       wait            = true
       repository_name = "zadara-charts"
-      # repository_url  = "https://eric-zadara.github.io/helm_charts"
-      repository_url  = "https://github.com/guangchuanh/helm_charts"
+      repository_url  = "https://eric-zadara.github.io/helm_charts"
       chart           = "zadara-aws-config"
       version         = "0.0.3"
       namespace       = "kube-system"
@@ -15,8 +14,7 @@ locals {
       order           = 10
       wait            = true
       repository_name = "zadara-charts"
-      # repository_url  = "https://eric-zadara.github.io/helm_charts"
-      repository_url  = "https://github.com/guangchuanh/helm_charts"
+      repository_url  = "https://eric-zadara.github.io/helm_charts"
       chart           = "k3s-helmchartconfig"
       version         = "0.0.2"
       namespace       = "kube-system"
@@ -118,7 +116,7 @@ locals {
         }
         storageClasses = [
           {
-            name                 = "gp2"
+            name                 = "gp3"
             volumeBindingMode    = "WaitForFirstConsumer"
             allowVolumeExpansion = true
             parameters = {
@@ -135,7 +133,7 @@ locals {
         ]
         volumeSnapshotClasses = [
           {
-            name           = "gp2"
+            name           = "gp3"
             deletionPolicy = "Delete"
             parameters = {
               type               = "gp2"
